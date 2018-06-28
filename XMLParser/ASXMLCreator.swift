@@ -12,8 +12,10 @@ class ASXMLCreator {
     
     typealias JSON = [String: Any]
     
-    var input: JSON?
+    private var input: JSON?
+    
     var output: String?
+    
     init(input: JSON) {
         
         self.input = input
