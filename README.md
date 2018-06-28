@@ -5,6 +5,8 @@
 ![License](https://img.shields.io/cocoapods/l/SwiftyXMLParser.svg?style=flat)
 ![Platform](https://img.shields.io/badge/Platform-iOS10%2B-green.svg)
 
+#ASXMLParser
+
 One-Stop XML Parsing solution in swift
 
 # What's this?
@@ -14,6 +16,7 @@ This is a XML parser inspired by [XML-Parser by Troy Brant](http://troybrant.net
 
 # Feature
 -  Parse XML Doument as NSDictionary.
+-  Create XML from Dictionary.
 
 # Requirement
 + iOS 8.0+
@@ -120,7 +123,62 @@ if let path = Bundle.main.path(forResource: "Foods", ofType: "xml"){
 
 ```
 
+Now, lets see how we can create XML from Dictionary,
 
+```
+let education = [["course":"graduation",
+                          "institutation":"IITD",
+                          "from":"2007",
+                          "to":"2011"],
+                         ["course":"10+2",
+                          "institutation":"DPS",
+                          "from":"2005",
+                          "to":"2007"],
+                         ["course":"10",
+                          "institutation":"DPS",
+                          "from":"2000",
+                          "to":"2005"]]
+        let dic : [String : Any] = ["fisrtname":"John",
+                                    "lastname":"Doe",
+                                    "email":"john@doe.com",
+                                    "age":"36",
+                                    "gender":"male",
+                                    "education":education]
+        let xml = ASXMLCreator.init(input: dic)
+        print("XML: \(xml.output ?? "")")
+```
+
+Output will be, 
+
+```
+XML: <?xml version="1.0" encoding="UTF-8" ?>
+		<root>
+		<fisrtname>John</fisrtname>
+		<age>36<age>
+		<email>john@doe.com</email>
+		<lastname>Doe</lastname>
+		<gender>male</gender>
+		<education>
+			<from>2007</from>
+			<institutation>IITD</institutation>
+			<course>graduation</course>
+			<to>2011</to>
+			</education>
+		<education>
+			<from>2005</from>
+			<institutation>DPS</institutation>
+			<course>10+2</course>
+			<to>2007</to>
+			</education>
+		<education>
+			<from>2000</from>
+			<institutation>DPS</institutation>
+			<course>10</course>
+			<to>2005</to>
+		</education>
+		</root>
+```
+p.s: this is formatted output, orogially it will be single line output.  
 
 # License
 
