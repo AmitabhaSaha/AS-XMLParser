@@ -15,8 +15,6 @@
 		EB08492F20E0F888009A2BBE /* ASXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08492E20E0F888009A2BBE /* ASXMLParser.swift */; };
 		EB08493420E1679E009A2BBE /* Books.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB08493320E1679E009A2BBE /* Books.xml */; };
 		EB08493C20E23468009A2BBE /* Foods.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB08493B20E23468009A2BBE /* Foods.xml */; };
-		EB9E980F20E6560B007F82BE /* Locations.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB9E980E20E6560B007F82BE /* Locations.xml */; };
-		EB9E981120E744A5007F82BE /* Elements.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB9E981020E744A4007F82BE /* Elements.xml */; };
 		EBFF325520E4007F00BE30D4 /* ASXMLCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF325420E4007F00BE30D4 /* ASXMLCreator.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +29,6 @@
 		EB08492E20E0F888009A2BBE /* ASXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASXMLParser.swift; sourceTree = "<group>"; };
 		EB08493320E1679E009A2BBE /* Books.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Books.xml; sourceTree = "<group>"; };
 		EB08493B20E23468009A2BBE /* Foods.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Foods.xml; sourceTree = "<group>"; };
-		EB9E980E20E6560B007F82BE /* Locations.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Locations.xml; sourceTree = "<group>"; };
-		EB9E981020E744A4007F82BE /* Elements.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Elements.xml; sourceTree = "<group>"; };
 		EBFF325420E4007F00BE30D4 /* ASXMLCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASXMLCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,8 +62,6 @@
 		EB08491B20E0F859009A2BBE /* XMLParser */ = {
 			isa = PBXGroup;
 			children = (
-				EB9E981020E744A4007F82BE /* Elements.xml */,
-				EB9E980E20E6560B007F82BE /* Locations.xml */,
 				EB08493B20E23468009A2BBE /* Foods.xml */,
 				EB08493320E1679E009A2BBE /* Books.xml */,
 				EB08491C20E0F859009A2BBE /* AppDelegate.swift */,
@@ -142,8 +136,6 @@
 			files = (
 				EB08492720E0F860009A2BBE /* LaunchScreen.storyboard in Resources */,
 				EB08492420E0F860009A2BBE /* Assets.xcassets in Resources */,
-				EB9E980F20E6560B007F82BE /* Locations.xml in Resources */,
-				EB9E981120E744A5007F82BE /* Elements.xml in Resources */,
 				EB08493420E1679E009A2BBE /* Books.xml in Resources */,
 				EB08493C20E23468009A2BBE /* Foods.xml in Resources */,
 				EB08492220E0F859009A2BBE /* Main.storyboard in Resources */,

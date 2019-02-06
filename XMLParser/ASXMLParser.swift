@@ -91,9 +91,7 @@ public class ASXMLParser: NSObject, XMLParserDelegate {
         
         // Create the child dictionary for the new element, and initilaize it with the attributes
         let childDict = NSMutableDictionary()
-        attributeDict.keys.forEach({ (dickey) in
-            childDict.setValue(attributeDict[dickey], forKey: "\(dickey)_attr")
-        })
+        childDict.addEntries(from: attributeDict)
         
         // If there's already an item for this key, it means we need to create an array
         let existingValue = parentDict[elementName]
