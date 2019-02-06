@@ -15,8 +15,24 @@
 		EB08492F20E0F888009A2BBE /* ASXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB08492E20E0F888009A2BBE /* ASXMLParser.swift */; };
 		EB08493420E1679E009A2BBE /* Books.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB08493320E1679E009A2BBE /* Books.xml */; };
 		EB08493C20E23468009A2BBE /* Foods.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB08493B20E23468009A2BBE /* Foods.xml */; };
+		EB24B5BB220AAFBE0044EEEA /* XMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB24B5BA220AAFBE0044EEEA /* XMLParserTests.swift */; };
+		EB24B5C5220AB0530044EEEA /* Books.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB24B5C2220AB0520044EEEA /* Books.xml */; };
+		EB24B5C6220AB0530044EEEA /* Locations.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB24B5C3220AB0530044EEEA /* Locations.xml */; };
+		EB24B5C7220AB0530044EEEA /* Foods.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB24B5C4220AB0530044EEEA /* Foods.xml */; };
+		EB5845722201CE3C00FB176F /* sam.html in Resources */ = {isa = PBXBuildFile; fileRef = EB5845712201CE3C00FB176F /* sam.html */; };
+		EB9E980F20E6560B007F82BE /* Locations.xml in Resources */ = {isa = PBXBuildFile; fileRef = EB9E980E20E6560B007F82BE /* Locations.xml */; };
 		EBFF325520E4007F00BE30D4 /* ASXMLCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF325420E4007F00BE30D4 /* ASXMLCreator.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EB24B5BD220AAFBE0044EEEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB08491120E0F859009A2BBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EB08491820E0F859009A2BBE;
+			remoteInfo = XMLParser;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EB08491920E0F859009A2BBE /* XMLParser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMLParser.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,11 +45,26 @@
 		EB08492E20E0F888009A2BBE /* ASXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASXMLParser.swift; sourceTree = "<group>"; };
 		EB08493320E1679E009A2BBE /* Books.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Books.xml; sourceTree = "<group>"; };
 		EB08493B20E23468009A2BBE /* Foods.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Foods.xml; sourceTree = "<group>"; };
+		EB24B5B8220AAFBE0044EEEA /* XMLParserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XMLParserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB24B5BA220AAFBE0044EEEA /* XMLParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMLParserTests.swift; sourceTree = "<group>"; };
+		EB24B5BC220AAFBE0044EEEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB24B5C2220AB0520044EEEA /* Books.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Books.xml; sourceTree = "<group>"; };
+		EB24B5C3220AB0530044EEEA /* Locations.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Locations.xml; sourceTree = "<group>"; };
+		EB24B5C4220AB0530044EEEA /* Foods.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Foods.xml; sourceTree = "<group>"; };
+		EB5845712201CE3C00FB176F /* sam.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = sam.html; sourceTree = "<group>"; };
+		EB9E980E20E6560B007F82BE /* Locations.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Locations.xml; sourceTree = "<group>"; };
 		EBFF325420E4007F00BE30D4 /* ASXMLCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASXMLCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EB08491620E0F859009A2BBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB24B5B5220AAFBE0044EEEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				EB08491B20E0F859009A2BBE /* XMLParser */,
+				EB24B5B9220AAFBE0044EEEA /* XMLParserTests */,
 				EB08491A20E0F859009A2BBE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				EB08491920E0F859009A2BBE /* XMLParser.app */,
+				EB24B5B8220AAFBE0044EEEA /* XMLParserTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +95,7 @@
 		EB08491B20E0F859009A2BBE /* XMLParser */ = {
 			isa = PBXGroup;
 			children = (
+				EB9E980E20E6560B007F82BE /* Locations.xml */,
 				EB08493B20E23468009A2BBE /* Foods.xml */,
 				EB08493320E1679E009A2BBE /* Books.xml */,
 				EB08491C20E0F859009A2BBE /* AppDelegate.swift */,
@@ -72,8 +106,21 @@
 				EB08492820E0F860009A2BBE /* Info.plist */,
 				EB08492E20E0F888009A2BBE /* ASXMLParser.swift */,
 				EBFF325420E4007F00BE30D4 /* ASXMLCreator.swift */,
+				EB5845712201CE3C00FB176F /* sam.html */,
 			);
 			path = XMLParser;
+			sourceTree = "<group>";
+		};
+		EB24B5B9220AAFBE0044EEEA /* XMLParserTests */ = {
+			isa = PBXGroup;
+			children = (
+				EB24B5C2220AB0520044EEEA /* Books.xml */,
+				EB24B5C4220AB0530044EEEA /* Foods.xml */,
+				EB24B5C3220AB0530044EEEA /* Locations.xml */,
+				EB24B5BA220AAFBE0044EEEA /* XMLParserTests.swift */,
+				EB24B5BC220AAFBE0044EEEA /* Info.plist */,
+			);
+			path = XMLParserTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,18 +143,40 @@
 			productReference = EB08491920E0F859009A2BBE /* XMLParser.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EB24B5B7220AAFBE0044EEEA /* XMLParserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB24B5C1220AAFBE0044EEEA /* Build configuration list for PBXNativeTarget "XMLParserTests" */;
+			buildPhases = (
+				EB24B5B4220AAFBE0044EEEA /* Sources */,
+				EB24B5B5220AAFBE0044EEEA /* Frameworks */,
+				EB24B5B6220AAFBE0044EEEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB24B5BE220AAFBE0044EEEA /* PBXTargetDependency */,
+			);
+			name = XMLParserTests;
+			productName = XMLParserTests;
+			productReference = EB24B5B8220AAFBE0044EEEA /* XMLParserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		EB08491120E0F859009A2BBE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0940;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = IBM;
 				TargetAttributes = {
 					EB08491820E0F859009A2BBE = {
 						CreatedOnToolsVersion = 9.4;
+					};
+					EB24B5B7220AAFBE0044EEEA = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = EB08491820E0F859009A2BBE;
 					};
 				};
 			};
@@ -125,6 +194,7 @@
 			projectRoot = "";
 			targets = (
 				EB08491820E0F859009A2BBE /* XMLParser */,
+				EB24B5B7220AAFBE0044EEEA /* XMLParserTests */,
 			);
 		};
 /* End PBXProject section */
@@ -136,9 +206,21 @@
 			files = (
 				EB08492720E0F860009A2BBE /* LaunchScreen.storyboard in Resources */,
 				EB08492420E0F860009A2BBE /* Assets.xcassets in Resources */,
+				EB9E980F20E6560B007F82BE /* Locations.xml in Resources */,
+				EB5845722201CE3C00FB176F /* sam.html in Resources */,
 				EB08493420E1679E009A2BBE /* Books.xml in Resources */,
 				EB08493C20E23468009A2BBE /* Foods.xml in Resources */,
 				EB08492220E0F859009A2BBE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB24B5B6220AAFBE0044EEEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB24B5C6220AB0530044EEEA /* Locations.xml in Resources */,
+				EB24B5C7220AB0530044EEEA /* Foods.xml in Resources */,
+				EB24B5C5220AB0530044EEEA /* Books.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,7 +238,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EB24B5B4220AAFBE0044EEEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB24B5BB220AAFBE0044EEEA /* XMLParserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB24B5BE220AAFBE0044EEEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EB08491820E0F859009A2BBE /* XMLParser */;
+			targetProxy = EB24B5BD220AAFBE0044EEEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EB08492020E0F859009A2BBE /* Main.storyboard */ = {
@@ -328,6 +426,49 @@
 			};
 			name = Release;
 		};
+		EB24B5BF220AAFBE0044EEEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = XMLParserTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.custom.honda.XMLParserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XMLParser.app/XMLParser";
+			};
+			name = Debug;
+		};
+		EB24B5C0220AAFBE0044EEEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = XMLParserTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibm.mobilefirst.custom.honda.XMLParserTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XMLParser.app/XMLParser";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -345,6 +486,15 @@
 			buildConfigurations = (
 				EB08492C20E0F860009A2BBE /* Debug */,
 				EB08492D20E0F860009A2BBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EB24B5C1220AAFBE0044EEEA /* Build configuration list for PBXNativeTarget "XMLParserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB24B5BF220AAFBE0044EEEA /* Debug */,
+				EB24B5C0220AAFBE0044EEEA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -58,13 +58,20 @@ public class ASXMLParser: NSObject, XMLParserDelegate {
     
     func objectWithData(data: Data, options: XMLReaderOptions) -> NSDictionary? {
         
+        let stringValue = String(data: data, encoding: .utf8)
+        
+        let removeAndChar = stringValue?.replacingOccurrences(of: "&", with: "!@#$%^*(()")
+        guard let filteredData: Data = removeAndChar?.data(using: String.Encoding(rawValue: String.Encoding.utf8.rawValue)) else {
+            return nil
+        }
+        
         // Clear out any old Data
         dictionaryStack = NSMutableArray()
         textInProgress = String()
         
         // Initialize the stack with a fresh dictionary
         dictionaryStack?.add(NSMutableDictionary())
-        let parser: XMLParser = XMLParser(data: data)
+        let parser: XMLParser = XMLParser(data: filteredData)
         
         parser.shouldProcessNamespaces = (Bool(0 != options.rawValue & XMLReaderOptions.ProcessNamespaces.rawValue))
         parser.shouldReportNamespacePrefixes = (Bool(0 != options.rawValue & XMLReaderOptions.ReportNamespacePrefixes.rawValue))
@@ -74,8 +81,9 @@ public class ASXMLParser: NSObject, XMLParserDelegate {
         
         let success: Bool = parser.parse()
         if success {
-            let resultDict: NSDictionary = dictionaryStack?.firstObject as! NSDictionary
-            if let resultFiltered = filterResponse(resultDict as? NSMutableDictionary) {
+            
+            if let resultDict: NSMutableDictionary = dictionaryStack?.firstObject as? NSMutableDictionary, let resultFiltered = filterResponse(resultDict) {
+                removeSpecialChar(dictionnary: resultFiltered)
                 return resultFiltered
             } else {
                 return nil
@@ -87,11 +95,15 @@ public class ASXMLParser: NSObject, XMLParserDelegate {
     public func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         
         // Get the dictionary for the current level in the stack
-        let parentDict = self.dictionaryStack?.lastObject as! NSMutableDictionary
+        guard let parentDict = self.dictionaryStack?.lastObject as? NSMutableDictionary else {
+            return
+        }
         
         // Create the child dictionary for the new element, and initilaize it with the attributes
         let childDict = NSMutableDictionary()
-        childDict.addEntries(from: attributeDict)
+        attributeDict.keys.forEach({ (dickey) in
+            childDict.setValue(attributeDict[dickey], forKey: "\(dickey)_attr")
+        })
         
         // If there's already an item for this key, it means we need to create an array
         let existingValue = parentDict[elementName]
@@ -150,17 +162,38 @@ public class ASXMLParser: NSObject, XMLParserDelegate {
         self.dictionaryStack?.removeLastObject()
     }
     
-    private func filterResponse(_ dictionnary: NSMutableDictionary?, key: String? = nil, count: Int = 0) -> NSMutableDictionary?{
-        
-        let filterdDic = NSMutableDictionary()
+    private func removeSpecialChar(dictionnary: NSMutableDictionary?) {
         
         if let keys = dictionnary?.allKeys as? [String] {
             for key in keys {
                 if let value = dictionnary?.value(forKey: key) as? NSMutableDictionary {
+                    removeSpecialChar(dictionnary: value)
+                } else if let values = dictionnary?.value(forKey: key) as? [NSMutableDictionary] {
+                    values.forEach { (value) in
+                        removeSpecialChar(dictionnary: value)
+                    }
+                } else if let value = dictionnary?.value(forKey: key) as? String {
+                    dictionnary?.setValue(value.replaceSpecialCharSet(), forKey: key.replaceAttributeCharSet())
+                }
+            }
+        }
+    }
+    
+    private func filterResponse(_ input: NSMutableDictionary?, key: String? = nil, count: Int = 0) -> NSMutableDictionary?{
+        
+        let filterdDic = NSMutableDictionary()
+        
+        if let keys = input?.allKeys as? [String] {
+            for key in keys {
+                if let value = input?.value(forKey: key) as? NSMutableDictionary {
                     
                     if value.count == 1 {
                         if let valueD = value.object(forKey: key) {
-                            dictionnary?.setValue(valueD, forKey: key)
+                            if let stringValue = valueD as? String {
+                                input?.setValue(stringValue.replaceSpecialCharSet(), forKey: key)
+                            } else {
+                                input?.setValue(valueD, forKey: key)
+                            }
                         }
                     } else {
                         
@@ -170,12 +203,16 @@ public class ASXMLParser: NSObject, XMLParserDelegate {
                     }
                     
                     
-                } else if let values = dictionnary?.value(forKey: key) as? [NSMutableDictionary] {
+                } else if let values = input?.value(forKey: key) as? [NSMutableDictionary] {
                     
                     for value in values {
                         if value.count == 1 {
                             if let valueD = value.object(forKey: key) {
-                                dictionnary?.setValue(valueD, forKey: key)
+                                if let stringValue = valueD as? String {
+                                    input?.setValue(stringValue.replaceSpecialCharSet(), forKey: key)
+                                } else {
+                                    input?.setValue(valueD, forKey: key)
+                                }
                             }
                         } else {
                             
@@ -197,12 +234,23 @@ public class ASXMLParser: NSObject, XMLParserDelegate {
     
     private func removeKeyFromDic(_ dictionnary: NSMutableDictionary, keyToRemove: String) -> NSMutableDictionary {
         
-        if let value = dictionnary.value(forKey: keyToRemove) as? String{
+        if let value = dictionnary.value(forKey: keyToRemove) as? String {
             if value.isEmpty == true{
                 dictionnary.removeObject(forKey: keyToRemove)
             }
         }
-    
+        
         return dictionnary
+    }
+}
+
+extension String {
+    
+    func replaceSpecialCharSet() -> String {
+        return self.replacingOccurrences(of: "!@#$%^*(()", with: "&")
+    }
+    
+    func replaceAttributeCharSet() -> String {
+        return self.replacingOccurrences(of: "_attr", with: "")
     }
 }
